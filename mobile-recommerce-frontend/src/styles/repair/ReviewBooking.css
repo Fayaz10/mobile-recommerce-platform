@@ -1,0 +1,39 @@
+.booking-confirmation-page{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.confirmation-card{
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.confirmation-summary{
+    margin:30px 0;
+    line-height:2;
+}
+
+.confirmation-buttons{
+    display:flex;
+    justify-content:space-between;
+}
+
+.back-btn,
+.confirm-btn{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.back-btn{
+    background:#e5e5e5;
+}
+
+.confirm-btn{
+    background:#198754;
+    color:#fff;
+}

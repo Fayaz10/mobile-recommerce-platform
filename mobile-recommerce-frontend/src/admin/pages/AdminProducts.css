@@ -1,0 +1,127 @@
+.admin-products-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.admin-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.add-product-btn {
+    background: #2563eb;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.admin-products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-products-table th,
+.admin-products-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.admin-products-table th {
+    background: #f3f4f6;
+}
+
+.admin-product-image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    padding: 4px;
+}
+
+.status-active {
+    color: green;
+    font-weight: 600;
+}
+
+.status-inactive {
+    color: red;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Activate / Deactivate Product */
+
+.activate-btn,
+.deactivate-btn {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+/* Activate */
+
+.activate-btn {
+    background: #16a34a;
+    color: white;
+}
+
+/* Deactivate */
+
+.deactivate-btn {
+    background: #f59e0b;
+    color: white;
+}
+
+.activate-btn:hover,
+.deactivate-btn:hover {
+    opacity: 0.85;
+}
+
+.delete-btn {
+    margin-left: 8px;
+}
+
+.delete-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #b71c1c;
+}

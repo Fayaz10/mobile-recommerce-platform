@@ -1,0 +1,81 @@
+.select-datetime-page{
+    max-width:900px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.datetime-card{
+    background:#fff;
+    border-radius:16px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.datetime-card h1{
+    margin-bottom:10px;
+}
+
+.datetime-card input{
+    width:100%;
+    padding:12px;
+    margin:15px 0 25px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.time-slot-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.time-slot{
+    padding:14px;
+    border:2px solid #ddd;
+    background:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.time-slot.selected{
+    background:#0d6efd;
+    color:#fff;
+    border-color:#0d6efd;
+}
+
+.datetime-buttons{
+    display:flex;
+    justify-content:space-between;
+}
+
+.back-btn,
+.continue-btn{
+    padding:12px 24px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.back-btn{
+    background:#e5e5e5;
+}
+
+.continue-btn{
+    background:#0d6efd;
+    color:#fff;
+}
+
+.continue-btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+.time-slot:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #dddddd;
+    color: #777777;
+}

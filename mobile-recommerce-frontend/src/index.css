@@ -1,0 +1,643 @@
+ * {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f8fa;
+  color: #1f2937;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   AMBATTUR MOBILES - PREMIUM REPAIR HERO
+========================================================= */
+
+.repair-hero {
+    position: relative;
+    max-width: 1480px;
+    min-height: 610px;
+    margin: 32px auto 60px;
+    padding: 70px 80px;
+    overflow: hidden;
+    border-radius: 32px;
+
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(249, 115, 22, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 65% 90%,
+            rgba(59, 130, 246, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #07111f 0%,
+            #0d1b2e 50%,
+            #101827 100%
+        );
+
+    color: white;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.hero-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    width: 300px;
+    height: 300px;
+    right: -80px;
+    top: -100px;
+    background: rgba(249, 115, 22, 0.25);
+}
+
+.hero-glow-two {
+    width: 350px;
+    height: 350px;
+    left: 40%;
+    bottom: -220px;
+    background: rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================
+   HERO LAYOUT
+========================================= */
+
+.repair-hero-content {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.repair-hero-text {
+    max-width: 720px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 15px;
+    margin-bottom: 22px;
+
+    border: 1px solid rgba(249, 115, 22, 0.4);
+    border-radius: 999px;
+
+    background: rgba(249, 115, 22, 0.1);
+
+    color: #fb923c;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+.repair-hero h1 {
+    margin: 0;
+
+    font-size: clamp(52px, 5vw, 82px);
+    line-height: 0.98;
+    letter-spacing: -3px;
+    font-weight: 900;
+
+    color: #ffffff;
+}
+
+.repair-hero h1 span {
+    color: #f97316;
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    margin: 28px 0 24px;
+
+    color: #cbd5e1;
+
+    font-size: 18px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 0 0 30px;
+}
+
+.hero-features span {
+    padding: 9px 14px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: #e2e8f0;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+
+.hero-primary-button,
+.hero-secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 52px;
+    padding: 0 25px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.hero-primary-button {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #f97316,
+        #ea580c
+    );
+
+    box-shadow:
+        0 12px 30px rgba(249, 115, 22, 0.28);
+}
+
+.hero-primary-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 16px 35px rgba(249, 115, 22, 0.4);
+}
+
+
+.hero-secondary-button {
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.22);
+
+    background: rgba(255,255,255,0.07);
+}
+
+.hero-secondary-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255,255,255,0.13);
+}
+
+
+.hero-note {
+    margin-top: 22px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RIGHT REPAIR VISUAL
+========================================= */
+
+.repair-hero-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.repair-visual-card {
+    position: relative;
+
+    width: 390px;
+    height: 440px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.1),
+            rgba(255,255,255,0.025)
+        );
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+.repair-phone {
+    position: relative;
+
+    width: 190px;
+    height: 355px;
+
+    padding: 9px;
+
+    border: 4px solid #334155;
+    border-radius: 32px;
+
+    background: #020617;
+
+    box-shadow:
+        0 30px 60px rgba(0,0,0,0.5);
+
+    transform: rotate(5deg);
+}
+
+
+.phone-speaker {
+    position: absolute;
+
+    top: 14px;
+    left: 50%;
+
+    width: 65px;
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: #020617;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 22px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(249,115,22,0.35),
+            transparent 30%
+        ),
+        linear-gradient(
+            160deg,
+            #172554,
+            #0f172a 55%,
+            #020617
+        );
+
+    text-align: center;
+}
+
+
+.repair-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 72px;
+    height: 72px;
+
+    margin-bottom: 8px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #f97316,
+        #fb923c
+    );
+
+    font-size: 34px;
+
+    box-shadow:
+        0 15px 35px rgba(249,115,22,0.35);
+}
+
+
+.phone-screen strong {
+    color: white;
+
+    font-size: 20px;
+}
+
+
+.phone-screen small {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 13px 16px;
+
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 14px;
+
+    background: rgba(15,23,42,0.94);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.35);
+
+    animation: repairFloat 4s ease-in-out infinite;
+}
+
+
+.floating-card > span {
+    font-size: 25px;
+}
+
+
+.floating-card div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.floating-card strong {
+    color: white;
+
+    font-size: 13px;
+}
+
+
+.floating-card small {
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+
+.video-proof-card {
+    top: 65px;
+    right: -45px;
+}
+
+
+.technician-card {
+    left: -55px;
+    bottom: 90px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.repair-status {
+    position: absolute;
+
+    bottom: 22px;
+    right: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 13px;
+
+    border-radius: 10px;
+
+    background: rgba(15,23,42,0.9);
+
+    color: #e2e8f0;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 12px rgba(34,197,94,0.9);
+
+    animation: statusPulse 1.8s infinite;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes repairFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .repair-hero {
+        margin: 24px;
+        padding: 55px 45px;
+    }
+
+    .repair-hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .repair-hero-text {
+        max-width: 800px;
+    }
+
+    .repair-hero-visual {
+        padding: 20px 0;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .repair-hero {
+        min-height: auto;
+
+        margin: 15px;
+        padding: 45px 22px;
+
+        border-radius: 22px;
+    }
+
+    .repair-hero h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-primary-button,
+    .hero-secondary-button {
+        width: 100%;
+    }
+
+    .repair-visual-card {
+        width: 100%;
+        max-width: 330px;
+        height: 400px;
+    }
+
+    .repair-phone {
+        width: 165px;
+        height: 310px;
+    }
+
+    .video-proof-card {
+        right: -5px;
+    }
+
+    .technician-card {
+        left: -5px;
+    }
+
+}

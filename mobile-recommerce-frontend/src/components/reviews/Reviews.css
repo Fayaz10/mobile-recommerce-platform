@@ -1,0 +1,287 @@
+/* ==========================================
+   REVIEWS SECTION
+========================================== */
+
+.reviews-section{
+    padding:80px 8%;
+    background:linear-gradient(180deg,#f8fafc,#ffffff);
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.reviews-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.reviews-header span{
+    display:inline-block;
+    color:#ff9800;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.reviews-header h2{
+    font-size:42px;
+    color:#222;
+    margin-bottom:18px;
+}
+
+.reviews-header p{
+    max-width:650px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.reviews-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:30px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.review-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    transition:.35s;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+
+    border:1px solid #ececec;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.review-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #ff9800,
+        #ff6f00
+    );
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+/* ==========================================
+   TOP
+========================================== */
+
+.review-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:22px;
+
+}
+
+.review-top img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #ff9800;
+
+}
+
+.review-top h3{
+
+    margin:0;
+
+    color:#222;
+
+    font-size:20px;
+
+}
+
+.review-top span{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   STARS
+========================================== */
+
+.review-stars{
+
+    color:#FFC107;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+    letter-spacing:2px;
+
+}
+
+/* ==========================================
+   SERVICE TITLE
+========================================== */
+
+.review-card h4{
+
+    color:#ff6f00;
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+/* ==========================================
+   REVIEW TEXT
+========================================== */
+
+.review-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.reviews-header h2{
+
+font-size:34px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.reviews-section{
+
+padding:60px 20px;
+
+}
+
+.reviews-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.review-card{
+
+padding:25px;
+
+}
+
+.review-top img{
+
+width:60px;
+
+height:60px;
+
+}
+
+.reviews-header h2{
+
+font-size:30px;
+
+}
+
+.reviews-header p{
+
+font-size:15px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.review-top{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.review-stars{
+
+text-align:center;
+
+}
+
+.review-card h4{
+
+text-align:center;
+
+}
+
+.review-card p{
+
+text-align:center;
+
+}
+
+}
