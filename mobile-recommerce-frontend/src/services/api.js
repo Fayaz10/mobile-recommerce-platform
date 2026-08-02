@@ -1,5 +1,4 @@
-const API_BASE_URL = "http://localhost:8080/api";
-
+const API_BASE_URL = "https://mobile-recommerce-backend-1.onrender.com/api";
 export async function getProducts() {
 
     const response = await fetch(
@@ -511,7 +510,7 @@ export async function deleteAddress(addressId) {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-        `http://localhost:8080/api/addresses/${addressId}`,
+    `${API_BASE_URL}/addresses/${addressId}`,
         {
             method: "DELETE",
 
@@ -1549,7 +1548,7 @@ export async function uploadImage(file) {
     formData.append("file", file);
 
     const response = await fetch(
-        "http://localhost:8080/api/upload",
+    `${API_BASE_URL}/upload`,
         {
             method: "POST",
             body: formData

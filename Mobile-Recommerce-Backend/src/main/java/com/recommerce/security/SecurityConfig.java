@@ -180,7 +180,7 @@ public class SecurityConfig {
                      .hasRole("ADMIN")
                      
                      
-                     .requestMatchers(HttpMethod.GET, "/api/repair/problems/**").permitAll()
+                     .requestMatchers(HttpMethod.GET, "/api/repair-problems/**").permitAll()
 
 
                         // =================================
