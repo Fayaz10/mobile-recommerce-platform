@@ -84,38 +84,34 @@ function HotDeals() {
 
             <div className="deals-header">
 
-                <div>
+    <span>LIMITED TIME OFFER</span>
 
-                    <span>LIMITED TIME OFFER</span>
+    <h2>Today's Hot Deals</h2>
 
-                    <h2>Today's Hot Deals</h2>
+    <p>
+        Grab these amazing refurbished mobile deals before the timer ends.
+    </p>
 
-                    <p>
-                        Grab these amazing refurbished mobile deals before the timer ends.
-                    </p>
+    <div className="countdown">
 
-                </div>
+        <div className="time-box">
+            <h3>{String(timeLeft.hours).padStart(2, "0")}</h3>
+            <small>Hours</small>
+        </div>
 
-                <div className="countdown">
+        <div className="time-box">
+            <h3>{String(timeLeft.minutes).padStart(2, "0")}</h3>
+            <small>Minutes</small>
+        </div>
 
-                    <div>
-                        <h3>{timeLeft.hours}</h3>
-                        <small>Hours</small>
-                    </div>
+        <div className="time-box">
+            <h3>{String(timeLeft.seconds).padStart(2, "0")}</h3>
+            <small>Seconds</small>
+        </div>
 
-                    <div>
-                        <h3>{timeLeft.minutes}</h3>
-                        <small>Minutes</small>
-                    </div>
+    </div>
 
-                    <div>
-                        <h3>{timeLeft.seconds}</h3>
-                        <small>Seconds</small>
-                    </div>
-
-                </div>
-
-            </div>
+</div>
             
 
             <div className="deal-grid">

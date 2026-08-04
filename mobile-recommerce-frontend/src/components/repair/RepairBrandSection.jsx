@@ -3,9 +3,65 @@ import { useNavigate } from "react-router-dom";
 import { getBrands } from "../../services/api";
 import RepairBrandCard from "./RepairBrandCard";
 
+import apple from "../../assets/brands/apple.svg";
+import samsung from "../../assets/brands/samsung.svg";
+import oneplus from "../../assets/brands/oneplus.svg";
+import vivo from "../../assets/brands/vivo.svg";
+import xiaomi from "../../assets/brands/xiaomi.svg";
+import oppo from "../../assets/brands/oppo.svg";
+import google from "../../assets/brands/google.svg";
+import realme from "../../assets/brands/realme.svg";
+import motorola from "../../assets/brands/motorola.svg";
+import iqoo from "../../assets/brands/iqoo.svg";
+import poco from "../../assets/brands/poco.svg";
+import tecno from "../../assets/brands/tecno.svg";
+import nothing from "../../assets/brands/nothing.svg";
+import nokia from "../../assets/brands/nokia.svg";
+import honor from "../../assets/brands/honor.svg";
+import asus from "../../assets/brands/asus.svg";
+import huawei from "../../assets/brands/huawei.svg";
+
 function RepairBrandSection() {
 
     const navigate = useNavigate();
+
+    const brandLogos = {
+
+    Apple: apple,
+
+    Samsung: samsung,
+
+    Oneplus: oneplus,
+
+    vivo: vivo,
+
+    Xiaomi: xiaomi,
+
+    Oppo: oppo,
+
+    Google: google,
+
+    Realme: realme,
+
+    Motorola: motorola,
+
+    iQOO: iqoo,
+
+    Poco: poco,
+
+    Tecno: tecno,
+
+    Nothing: nothing,
+
+    Nokia: nokia,
+
+    Honor: honor,
+
+    Asus: asus,
+
+    Huawei: huawei
+
+};
 
     const [brands, setBrands] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -18,7 +74,15 @@ function RepairBrandSection() {
 
                 const data = await getBrands();
 
-                setBrands(data);
+                const brandsWithLogos = data.map((brand) => ({
+
+                     ...brand,
+
+                     logo: brandLogos[brand.name] || null
+
+               }));
+
+            setBrands(brandsWithLogos);
 
             } catch (error) {
 

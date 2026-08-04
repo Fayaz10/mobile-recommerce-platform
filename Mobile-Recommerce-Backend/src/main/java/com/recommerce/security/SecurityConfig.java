@@ -88,11 +88,8 @@ public class SecurityConfig {
             throws Exception {
 
     	http
-
-        .cors(cors -> {})
-
-        .csrf(csrf ->
-                csrf.disable())
+             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+             .csrf(csrf -> csrf.disable())
 
 
             .exceptionHandling(exception ->
@@ -180,8 +177,10 @@ public class SecurityConfig {
                      .hasRole("ADMIN")
                      
                      
-                     .requestMatchers(HttpMethod.GET, "/api/repair-problems/**").permitAll()
-
+                     .requestMatchers(
+                    	        HttpMethod.GET,
+                    	        "/api/repair/problems/**"
+                    	).permitAll()
 
                         // =================================
                         // EVERYTHING ELSE
@@ -204,12 +203,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
-        CorsConfiguration configuration =
-                new CorsConfiguration();
+        CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(
+        configuration.setAllowedOriginPatterns(
                 List.of(
-                        "http://localhost:5173"
+                        "http://localhost:5173",
+                        "https://mobile-recommerce-platform.vercel.app"
                 )
         );
 
@@ -225,20 +224,15 @@ public class SecurityConfig {
         );
 
         configuration.setAllowedHeaders(
-                List.of(
-                        "Authorization",
-                        "Content-Type"
-                )
+                List.of("*")
         );
 
-        CorsConfigurationSource source =
+        configuration.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
 
-        ((UrlBasedCorsConfigurationSource) source)
-                .registerCorsConfiguration(
-                        "/**",
-                        configuration
-                );
+        source.registerCorsConfiguration("/**", configuration);
 
         return source;
     }

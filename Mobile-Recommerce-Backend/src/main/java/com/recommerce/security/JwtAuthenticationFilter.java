@@ -92,30 +92,20 @@ public class JwtAuthenticationFilter
             // STEP 4: VALIDATE JWT
             // ---------------------------------
 
-            if (jwtService
-                    .isTokenValid(token)) {
-            	
-            	
-            	System.out.println("JWT is VALID");
+        	boolean valid = jwtService.isTokenValid(token);
 
+        	System.out.println("JWT VALID = " + valid);
 
-                // ---------------------------------
-                // STEP 5: GET EMAIL FROM JWT
-                // ---------------------------------
+        	if (valid) {
 
-                String email =
-                        jwtService
-                                .extractEmail(token);
+        	    String email = jwtService.extractEmail(token);
 
+        	    System.out.println("JWT EMAIL = " + email);
 
-                // ---------------------------------
-                // STEP 6: FIND USER IN DATABASE
-                // ---------------------------------
+        	    User user = userRepository.findByEmail(email).orElse(null);
 
-                User user =
-                        userRepository
-                                .findByEmail(email)
-                                .orElse(null);
+        	    System.out.println("DATABASE USER = " + user);
+
 
 
                 // ---------------------------------

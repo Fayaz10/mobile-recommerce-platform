@@ -79,11 +79,9 @@ function RepairSection() {
 
             </div>
 
-            <div className="repair-content">
+            <div className="repair-overlay">
 
                 <h3>{repair.title}</h3>
-
-                <p>{repair.description}</p>
 
             </div>
 

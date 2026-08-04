@@ -35,15 +35,7 @@ function RefurbishedProducts() {
 
     const [filters, setFilters] = useState({
 
-    search: "",
-
-    brand: "",
-
-    storage: "",
-
-    ram: "",
-
-    condition: ""
+    search: ""
 
 });    
 
@@ -91,57 +83,15 @@ function RefurbishedProducts() {
 
     const filteredProducts = products.filter((product) => {
 
-    const search =
-        filters.search.toLowerCase();
+    const search = filters.search.toLowerCase();
 
-    const matchesSearch =
+    return (
 
         product.title?.toLowerCase().includes(search) ||
 
         product.deviceVariant?.deviceModel?.name
             ?.toLowerCase()
-            .includes(search);
-
-    const matchesBrand =
-
-        !filters.brand ||
-
-        String(
-            product.deviceVariant?.deviceModel?.brand?.id
-        ) === filters.brand;
-
-    const matchesStorage =
-
-        !filters.storage ||
-
-        product.deviceVariant?.storage ===
-        filters.storage;
-
-    const matchesRam =
-
-        !filters.ram ||
-
-        product.deviceVariant?.ram ===
-        filters.ram;
-
-    const matchesCondition =
-
-        !filters.condition ||
-
-        product.conditionType ===
-        filters.condition;
-
-    return (
-
-        matchesSearch &&
-
-        matchesBrand &&
-
-        matchesStorage &&
-
-        matchesRam &&
-
-        matchesCondition
+            .includes(search)
 
     );
 
@@ -176,66 +126,10 @@ function RefurbishedProducts() {
 
                 </section>
 
-                <ProductFilters
-
-    filters={filters}
-
-    setFilters={setFilters}
-
-    brands={[
-        ...new Map(
-            products.map(p => [
-                p.deviceVariant?.deviceModel?.brand?.id,
-                p.deviceVariant?.deviceModel?.brand
-            ])
-        ).values()
-    ]}
-
-    storages={[
-        ...new Set(
-            products.map(
-                p => p.deviceVariant?.storage
-            )
-        )
-    ]}
-
-    rams={[
-        ...new Set(
-            products.map(
-                p => p.deviceVariant?.ram
-            )
-        )
-    ]}
-
-    conditions={[
-        ...new Set(
-            products.map(
-                p => p.conditionType
-            )
-        )
-    ]}
-
-    colors={[]}
-
-    onReset={() =>
-
-        setFilters({
-
-            search: "",
-
-            brand: "",
-
-            storage: "",
-
-            ram: "",
-
-            condition: ""
-
-        })
-
-    }
-
-/>
+               <ProductFilters
+                   filters={filters}
+                   setFilters={setFilters}
+               />
 
 
                 {/* LOADING */}

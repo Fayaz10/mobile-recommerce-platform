@@ -11,7 +11,6 @@ import BrandSection from "../components/BrandSection";
 import AccessoriesCarousel from "../components/accessories/AccessoriesCarousel";
 import Reviews from "../components/reviews/Reviews";
 import WhyChooseUs from "../components/whychoose/WhyChooseUs";
-import ContactMap from "../components/contact/ContactMap";
 import ProductCard from "../components/ProductCard";
 import Footer from "../components/footer/Footer";
 import Carousel from "../components/common/Carousel";
@@ -178,13 +177,6 @@ function Home() {
             <Reviews />
             
             <WhyChooseUs />
-
-            {/* =====================================
-                    CONTACT CTA
-                ===================================== */}
-
-
-            <ContactMap />
 
 
             {/* =====================================

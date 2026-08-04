@@ -27,6 +27,9 @@ public class JwtService {
 
             @Value("${app.jwt.expiration}")
             long expiration) {
+    	
+    	System.out.println("JWT SECRET = " + secret);
+        System.out.println("SECRET LENGTH = " + secret.length());
 
         this.secretKey =
                 Keys.hmacShaKeyFor(
@@ -75,22 +78,19 @@ public class JwtService {
                 .getSubject();
     }
 
-    public boolean isTokenValid(
-            String token) {
+    public boolean isTokenValid(String token) {
 
-        try {
+        System.out.println("STEP 1");
 
-            Claims claims =
-                    getClaims(token);
+        Claims claims = getClaims(token);
 
-            return claims
-                    .getExpiration()
-                    .after(new Date());
+        System.out.println("STEP 2");
 
-        } catch (Exception e) {
+        System.out.println("Expiration = " + claims.getExpiration());
 
-            return false;
-        }
+        System.out.println("Current = " + new Date());
+
+        return claims.getExpiration().after(new Date());
     }
 
     private Claims getClaims(

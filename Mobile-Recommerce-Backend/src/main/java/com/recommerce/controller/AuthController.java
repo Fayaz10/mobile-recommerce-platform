@@ -106,6 +106,10 @@ public class AuthController {
             
             String token =
                     jwtService.generateToken(user);
+
+            System.out.println("================================");
+            System.out.println("LOGIN TOKEN = " + token);
+            System.out.println("================================");
             
 
             Map<String, Object> response =

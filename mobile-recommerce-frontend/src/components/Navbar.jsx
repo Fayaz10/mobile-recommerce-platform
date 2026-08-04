@@ -29,7 +29,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-
+import "./Navbar.css";
 
 function Navbar() {
 
@@ -92,9 +92,23 @@ const closeMenu = () => {
                     }
                 );
 
+                if (response.status === 401) {
+
+                   localStorage.removeItem("token");
+                   localStorage.removeItem("user");
+
+                     setUser(null);
+                     setCartCount(0);
+
+                  return;
+                }
+
                 if (!response.ok) {
-                    setCartCount(0);
-                    return;
+
+                 setCartCount(0);
+
+                 return;
+
                 }
 
                 const cart =
@@ -158,7 +172,10 @@ const closeMenu = () => {
     useEffect(() => {
 
         updateUser();
-        updateCartCount();
+
+        if (localStorage.getItem("token")) {
+            updateCartCount();
+        }
 
         window.addEventListener(
             "cartUpdated",
@@ -255,60 +272,87 @@ const closeMenu = () => {
 
             <div className="top-info-bar">
 
-                <div className="top-info-item">
-                    <span>🛠</span>
-                    <strong>
-                        PROFESSIONAL MOBILE REPAIR IN AMBATTUR
-                    </strong>
-                </div>
+    <div className="marquee">
 
-                <span className="top-divider">
-                    •
-                </span>
+        <div className="marquee-content">
 
-                <div className="top-info-item">
-                    <span>🏪</span>
-                    <strong>
-                        IN-SHOP REPAIR ONLY
-                    </strong>
-                </div>
+            {/* FIRST SET */}
 
-                <span className="top-divider">
-                    •
-                </span>
-
-                <div className="top-info-item">
-                    <span>🎥</span>
-                    <strong>
-                        REPAIR VIDEO PROOF AVAILABLE
-                    </strong>
-                </div>
-
-                <span className="top-divider">
-                    •
-                </span>
-
-                <div className="top-info-item">
-                    <span>✓</span>
-                    <strong>
-                        QUALITY PARTS
-                    </strong>
-                </div>
-
-                <span className="top-divider">
-                    •
-                </span>
-
-                <div className="top-info-item">
-                    <span>👨‍🔧</span>
-                    <strong>
-                        EXPERT TECHNICIANS
-                    </strong>
-                </div>
-
+            <div className="top-info-item">
+                <span>🛠</span>
+                <strong>PROFESSIONAL MOBILE REPAIR IN AMBATTUR</strong>
             </div>
 
+            <span className="top-divider">•</span>
 
+            <div className="top-info-item">
+                <span>🏪</span>
+                <strong>IN-SHOP REPAIR ONLY</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>🎥</span>
+                <strong>REPAIR VIDEO PROOF AVAILABLE</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>✓</span>
+                <strong>QUALITY PARTS</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>👨‍🔧</span>
+                <strong>EXPERT TECHNICIANS</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            {/* SECOND SET */}
+
+            <div className="top-info-item">
+                <span>🛠</span>
+                <strong>PROFESSIONAL MOBILE REPAIR IN AMBATTUR</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>🏪</span>
+                <strong>IN-SHOP REPAIR ONLY</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>🎥</span>
+                <strong>REPAIR VIDEO PROOF AVAILABLE</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>✓</span>
+                <strong>QUALITY PARTS</strong>
+            </div>
+
+            <span className="top-divider">•</span>
+
+            <div className="top-info-item">
+                <span>👨‍🔧</span>
+                <strong>EXPERT TECHNICIANS</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
             {/* MAIN HEADER */}
 
@@ -390,9 +434,12 @@ const closeMenu = () => {
                 <IconButton onClick={openMenu}>
 
                     <Avatar
-                        sx={{
+                       sx={{
+                            width: 38,
+                            height: 38,
+                            fontSize: 16,
                             bgcolor: "#ff6b00"
-                        }}
+                       }}
                     >
                         {user.name?.charAt(0).toUpperCase()}
                     </Avatar>

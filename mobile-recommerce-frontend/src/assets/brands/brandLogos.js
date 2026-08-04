@@ -1,51 +1,39 @@
+import apple from "./apple.svg";
+import samsung from "./samsung.svg";
+import oneplus from "./oneplus.svg";
+import vivo from "./vivo.svg";
+import xiaomi from "./xiaomi.svg";
+import oppo from "./oppo.svg";
+import google from "./google.svg";
+import realme from "./realme.svg";
+import motorola from "./motorola.svg";
+import iqoo from "./iqoo.svg";
+import poco from "./poco.svg";
+import tecno from "./tecno.svg";
+import nothing from "./nothing.svg";
+import nokia from "./nokia.svg";
+import honor from "./honor.svg";
+import asus from "./asus.svg";
+import huawei from "./huawei.svg";
 
 const brandLogos = {
-
-    apple:
-        "https://cdn.simpleicons.org/apple/000000",
-
-    xiaomi:
-        "https://cdn.simpleicons.org/xiaomi/FF6900",
-
-    samsung:
-        "https://cdn.simpleicons.org/samsung/1428A0",
-
-    vivo:
-        "https://cdn.simpleicons.org/vivo/415FFF",
-
-    oneplus:
-        "https://cdn.simpleicons.org/oneplus/F5010C",
-
-    oppo:
-        "https://cdn.simpleicons.org/oppo/2AAD5C",
-
-    google:
-        "https://cdn.simpleicons.org/google/4285F4",
-
-    realme:
-        null,
-
-    motorola:
-        "https://cdn.simpleicons.org/motorola/E1140A",
-
-    iqoo: null,
-
-    poco:
-        "https://cdn.simpleicons.org/xiaomi/FFB800",
-
-    tecno: null,
-
-    nothing: null,
-
-    nokia:
-        "https://cdn.simpleicons.org/nokia/124191",
-
-    honor:
-        "https://cdn.simpleicons.org/honor/000000",
-
-    asus: null,
-
-    huawei: null
+    apple,
+    samsung,
+    oneplus,
+    vivo,
+    xiaomi,
+    oppo,
+    google,
+    realme,
+    motorola,
+    iqoo,
+    poco,
+    tecno,
+    nothing,
+    nokia,
+    honor,
+    asus,
+    huawei
 };
 
 export default brandLogos;

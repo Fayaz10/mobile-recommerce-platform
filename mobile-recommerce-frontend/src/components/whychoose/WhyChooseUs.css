@@ -3,7 +3,7 @@
 ========================================== */
 
 .why-section{
-    padding:80px 8%;
+    padding:90px 8%;
     background:#f8fafc;
 }
 
@@ -18,7 +18,7 @@
 
 .why-header span{
     display:inline-block;
-    color:#ff9800;
+    color:#ff6b00;
     font-size:14px;
     font-weight:700;
     letter-spacing:2px;
@@ -27,13 +27,14 @@
 }
 
 .why-header h2{
-    font-size:42px;
+    font-size:44px;
     color:#222;
     margin-bottom:18px;
+    font-weight:800;
 }
 
 .why-header p{
-    max-width:700px;
+    max-width:720px;
     margin:auto;
     color:#666;
     line-height:1.8;
@@ -48,7 +49,7 @@
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
 
     gap:30px;
 
@@ -60,91 +61,128 @@
 
 .why-card{
 
-    background:#fff;
+    position:relative;
 
-    padding:35px 30px;
+    height:360px;
 
-    border-radius:20px;
+    overflow:hidden;
 
-    text-align:center;
+    border-radius:22px;
+
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+    cursor:pointer;
 
     transition:.35s;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-    border:1px solid #ececec;
 
 }
 
 .why-card:hover{
 
-    transform:translateY(-10px);
+    transform:translateY(-8px);
 
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    box-shadow:0 25px 55px rgba(0,0,0,.22);
 
 }
 
 /* ==========================================
-   ICON
+   IMAGE
 ========================================== */
 
-.why-icon{
+.why-image{
 
-    width:80px;
+    width:100%;
 
-    height:80px;
+    height:100%;
 
-    margin:0 auto 25px;
+    object-fit:cover;
 
-    border-radius:50%;
+    display:block;
+
+    transition:.5s;
+
+}
+
+.why-card:hover .why-image{
+
+    transform:scale(1.08);
+
+}
+
+/* ==========================================
+   OVERLAY
+========================================== */
+
+.why-overlay{
+
+    position:absolute;
+
+    inset:0;
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    font-size:34px;
+    align-items:flex-end;
+
+    padding:35px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.05)
+    );
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.why-content{
+
+    width:100%;
+
+    text-align:center;
 
     color:#fff;
 
-    background:linear-gradient(135deg,#ff9800,#ff6f00);
+}
 
-    transition:.3s;
+.why-content h3{
+
+    margin:0;
+
+    font-size:32px;
+
+    font-weight:700;
 
 }
 
-.why-card:hover .why-icon{
+.why-line{
 
-    transform:rotate(10deg) scale(1.08);
+    width:70px;
 
-}
+    height:4px;
 
-/* ==========================================
-   TITLE
-========================================== */
+    background:#ff6b00;
 
-.why-card h3{
+    margin:18px auto;
 
-    color:#222;
-
-    margin-bottom:15px;
-
-    font-size:22px;
+    border-radius:30px;
 
 }
 
-/* ==========================================
-   DESCRIPTION
-========================================== */
+.why-content p{
 
-.why-card p{
+    margin:0;
 
-    color:#666;
+    color:#f5f5f5;
+
+    font-size:16px;
 
     line-height:1.8;
-
-    font-size:15px;
 
 }
 
@@ -154,9 +192,15 @@
 
 @media(max-width:992px){
 
+.why-grid{
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+}
+
 .why-header h2{
 
-font-size:34px;
+font-size:36px;
 
 }
 
@@ -180,17 +224,19 @@ gap:25px;
 
 .why-card{
 
-padding:30px 25px;
+height:300px;
 
 }
 
-.why-icon{
+.why-content h3{
 
-width:70px;
+font-size:26px;
 
-height:70px;
+}
 
-font-size:30px;
+.why-content p{
+
+font-size:14px;
 
 }
 
@@ -210,15 +256,23 @@ font-size:15px;
 
 @media(max-width:480px){
 
-.why-card h3{
+.why-card{
 
-font-size:20px;
+height:270px;
 
 }
 
-.why-card p{
+.why-content h3{
 
-font-size:14px;
+font-size:22px;
+
+}
+
+.why-content p{
+
+font-size:13px;
+
+line-height:1.6;
 
 }
 

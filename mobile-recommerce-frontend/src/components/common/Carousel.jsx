@@ -9,7 +9,7 @@ function Carousel({ children }) {
 
         sliderRef.current.scrollBy({
 
-            left: -320,
+            left: -410,
 
             behavior: "smooth"
 
@@ -21,7 +21,7 @@ function Carousel({ children }) {
 
         sliderRef.current.scrollBy({
 
-            left: 320,
+            left: 410,
 
             behavior: "smooth"
 

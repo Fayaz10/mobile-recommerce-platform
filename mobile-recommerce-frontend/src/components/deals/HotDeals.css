@@ -1,63 +1,139 @@
-.hot-deals {
-    padding: 80px 8%;
-    background: linear-gradient(180deg, #ffffff, #f8fafc);
+.hot-deals{
+
+    padding:90px 8%;
+
+    background:linear-gradient(
+        180deg,
+        #ffffff,
+        #f8fafc
+    );
+
 }
 
-.deals-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
+.deals-header{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    margin-bottom:55px;
+
 }
 
-.deals-header span {
-    color: #ff9800;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.deals-header span{
+
+    color:#ff6b00;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
 }
 
-.deals-header h2 {
-    font-size: 42px;
-    margin: 12px 0;
-    color: #222;
+.deals-header h2{
+
+    margin:14px 0 12px;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    color:#111827;
+
 }
 
-.deals-header p {
-    color: #666;
-    max-width: 550px;
-    line-height: 1.7;
+.deals-header p{
+
+    max-width:650px;
+
+    color:#64748b;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
 }
 
-.countdown {
-    display: flex;
-    gap: 15px;
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
 }
 
-.countdown div {
-    width: 90px;
-    height: 90px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #ff9800, #ff6f00);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 12px 25px rgba(255,152,0,.25);
+.time-box{
+
+    width:85px;
+
+    height:85px;
+
+    background:#fff;
+
+    border:2px solid #ff6b00;
+
+    border-radius:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.06);
+
+    transition:.3s;
+
 }
 
-.countdown h3 {
-    margin: 0;
-    font-size: 30px;
+.time-box:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(255,107,0,.18);
+
 }
 
-.countdown small {
-    margin-top: 5px;
-    font-size: 13px;
+.time-box h3{
+
+    margin:0;
+
+    color:#ff6b00;
+
+    font-size:30px;
+
+    font-weight:800;
+
+}
+
+.time-box small{
+
+    margin-top:5px;
+
+    color:#64748b;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
 }
 
 .deal-grid {

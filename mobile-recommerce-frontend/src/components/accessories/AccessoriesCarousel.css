@@ -2,179 +2,165 @@
    ACCESSORIES SECTION
 ========================================== */
 
-.accessories-section {
-    padding: 80px 8%;
-    background: linear-gradient(180deg, #ffffff, #f7f9fc);
+.accessories-section{
+    padding:100px 0;
+    max-width:1450px;
+    margin:auto;
+    background:#f8fafc;
 }
 
 /* ==========================================
    HEADER
 ========================================== */
 
-.accessories-header {
+.accessories-header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.accessories-header span{
+    color:#ff9800;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.accessories-header h2{
+    margin-top:12px;
     text-align: center;
-    margin-bottom: 60px;
+    font-size:42px;
+    color:#222;
 }
 
-.accessories-header span {
-    display: inline-block;
-    color: #ff9800;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.accessories-header h2 {
-    font-size: 42px;
-    color: #222;
-    margin-bottom: 18px;
-}
-
-.accessories-header p {
-    max-width: 650px;
-    margin: auto;
-    color: #666;
-    font-size: 17px;
-    line-height: 1.8;
-}
 
 /* ==========================================
-   GRID
+   CAROUSEL
 ========================================== */
 
-.accessories-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-
-    gap: 30px;
-
+.accessories-carousel{
+    max-width:1320px;
+    margin:auto;
 }
 
 /* ==========================================
    CARD
 ========================================== */
 
-.accessory-card {
+.accessory-card{
 
-    background: white;
+    position:relative;
 
-    border-radius: 18px;
+    overflow:hidden;
 
-    padding: 35px 25px;
+    border-radius:22px;
 
-    text-align: center;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
 
-    transition: .35s;
+    background:transparent;
 
-    cursor: pointer;
+    display:block;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-
-    border: 1px solid #eeeeee;
-
-    position: relative;
-
-    overflow: hidden;
+    transition:.35s;
 
 }
 
-.accessory-card::before {
+.accessory-card:hover{
 
-    content: "";
+    transform:translateY(-6px);
 
-    position: absolute;
-
-    left: 0;
-
-    top: 0;
-
-    width: 100%;
-
-    height: 5px;
-
-    background: linear-gradient(
-        90deg,
-        #ff9800,
-        #ff6f00
-    );
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
 
 }
 
-.accessory-card:hover {
+.accessory-card:hover .accessory-image{
 
-    transform: translateY(-10px);
-
-    box-shadow: 0 18px 40px rgba(0,0,0,.15);
+    transform:scale(1.08);
 
 }
 
 /* ==========================================
-   ICON
+   IMAGE
 ========================================== */
 
-.accessory-icon {
+.accessory-image-container{
 
-    width: 95px;
+    position:relative;
 
-    height: 95px;
+    width:100%;
 
-    margin: auto;
+    height:260px;
 
-    border-radius: 50%;
+    overflow:hidden;
 
-    background: linear-gradient(
-        135deg,
-        #ff9800,
-        #ff6f00
-    );
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    color: white;
-
-    font-size: 42px;
-
-    margin-bottom: 25px;
-
-    transition: .35s;
+    border-radius:22px;
 
 }
 
-.accessory-card:hover .accessory-icon {
+.accessory-image{
 
-    transform: rotate(10deg) scale(1.1);
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
 
 }
 
 /* ==========================================
-   TITLE
+   OVERLAY
 ========================================== */
 
-.accessory-card h3 {
+.accessory-overlay{
 
-    font-size: 22px;
+    position:absolute;
 
-    color: #222;
+    inset:0;
 
-    margin-bottom: 15px;
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    padding:22px;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.15),
+        transparent
+    );
 
 }
 
-.accessory-card p {
+.accessory-overlay h3{
 
-    color: #666;
+    margin:0;
 
-    font-size: 15px;
+    color:#fff;
 
-    line-height: 1.7;
+    font-size:28px;
+
+    font-weight:700;
+
+    text-shadow:0 2px 10px rgba(0,0,0,.5);
+
+}
+
+.accessory-overlay p{
+
+    margin-top:8px;
+
+    color:#f2f2f2;
+
+    font-size:14px;
+
+    line-height:1.6;
 
 }
 
@@ -182,45 +168,41 @@
    BUTTON
 ========================================== */
 
-.accessories-button {
+.accessories-button{
 
-    margin-top: 50px;
+    text-align:center;
 
-    text-align: center;
-
-}
-
-.shop-accessories {
-
-    display: inline-block;
-
-    text-decoration: none;
-
-    padding: 16px 38px;
-
-    background: linear-gradient(
-        135deg,
-        #ff9800,
-        #ff6f00
-    );
-
-    color: white;
-
-    font-size: 16px;
-
-    font-weight: 700;
-
-    border-radius: 10px;
-
-    transition: .35s;
+    margin-top:45px;
 
 }
 
-.shop-accessories:hover {
+.shop-accessories{
 
-    transform: translateY(-4px);
+    display:inline-block;
 
-    box-shadow: 0 12px 28px rgba(255,152,0,.35);
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#ff9800,#ff6f00);
+
+    color:#fff;
+
+    padding:18px 55px;
+
+    border-radius:14px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.shop-accessories:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(255,152,0,.35);
 
 }
 
@@ -228,87 +210,49 @@
    RESPONSIVE
 ========================================== */
 
-@media(max-width:992px){
-
-.accessories-header h2{
-
-font-size:34px;
-
-}
-
-}
-
 @media(max-width:768px){
 
 .accessories-section{
 
-padding:60px 20px;
-
-}
-
-.accessories-grid{
-
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-gap:20px;
-
-}
-
-.accessory-card{
-
-padding:28px 18px;
-
-}
-
-.accessory-icon{
-
-width:80px;
-
-height:80px;
-
-font-size:34px;
-
-}
-
-.accessory-card h3{
-
-font-size:20px;
+    padding:60px 20px;
 
 }
 
 .accessories-header h2{
 
-font-size:30px;
+    font-size:32px;
 
 }
 
 .accessories-header p{
 
-font-size:15px;
+    font-size:15px;
 
 }
 
-}
+.accessory-image-container{
 
-@media(max-width:480px){
-
-.accessories-grid{
-
-grid-template-columns:1fr;
+    height:220px;
 
 }
 
-.accessory-card{
+.accessory-overlay h3{
 
-padding:25px 18px;
+    font-size:24px;
+
+}
+
+.accessory-overlay p{
+
+    font-size:13px;
 
 }
 
 .shop-accessories{
 
-width:100%;
+    width:100%;
 
-text-align:center;
+    text-align:center;
 
 }
 

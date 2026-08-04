@@ -1,47 +1,35 @@
 import { useState } from "react";
-import {
-    Link,
-    useNavigate
-} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
-import {
-    registerUser
-} from "../services/api";
+import { registerUser } from "../services/api";
 
 function Register() {
 
     const navigate = useNavigate();
 
-    const [form, setForm] =
-        useState({
-            name: "",
-            email: "",
-            phone: "",
-            password: ""
-        });
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        password: ""
+    });
 
-    const [confirmPassword,
-        setConfirmPassword] =
-        useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
-    const [error, setError] =
-        useState("");
+    const [error, setError] = useState("");
 
-    const [loading, setLoading] =
-        useState(false);
+    const [loading, setLoading] = useState(false);
 
     function handleChange(event) {
 
-        const {
-            name,
-            value
-        } = event.target;
+        const { name, value } = event.target;
 
         setForm({
             ...form,
             [name]: value
         });
+
     }
 
     async function handleSubmit(event) {
@@ -50,25 +38,20 @@ function Register() {
 
         setError("");
 
-        if (
-            form.password !==
-            confirmPassword
-        ) {
+        if (form.password !== confirmPassword) {
 
-            setError(
-                "Passwords do not match."
-            );
+            setError("Passwords do not match.");
 
             return;
+
         }
 
         if (form.password.length < 8) {
 
-            setError(
-                "Password must contain at least 8 characters."
-            );
+            setError("Password must contain at least 8 characters.");
 
             return;
+
         }
 
         try {
@@ -77,9 +60,7 @@ function Register() {
 
             await registerUser(form);
 
-            alert(
-                "Registration successful. Please login."
-            );
+            alert("Registration successful. Please login.");
 
             navigate("/login");
 
@@ -90,151 +71,263 @@ function Register() {
         } finally {
 
             setLoading(false);
+
         }
+
     }
 
     return (
+
         <>
+
             <Navbar />
 
-            <main className="auth-page">
+            <main className="login-page">
 
-                <div className="auth-card">
+                {/* LEFT SIDE */}
 
-                    <h1>
-                        Create Account
-                    </h1>
+                <section className="login-showcase">
 
-                    <p className="auth-subtitle">
-                        Create your MobileHub
-                        customer account
-                    </p>
+                    <div className="login-showcase-content">
 
-                    {error && (
+                        <span className="login-badge">
+                            CREATE ACCOUNT
+                        </span>
 
-                        <div className="auth-error">
-                            {error}
+                        <h1>
+                            Join <span>Ambattur Mobiles</span>
+                        </h1>
+
+                        <p className="login-showcase-text">
+
+                            Create your account to buy certified refurbished
+                            mobiles, book repairs, track orders and enjoy
+                            exclusive offers.
+
+                        </p>
+
+                        <div className="login-benefits">
+
+                            <div className="login-benefit">
+
+                                <span>✓</span>
+
+                                <div>
+
+                                    <strong>
+                                        Certified Refurbished Mobiles
+                                    </strong>
+
+                                    <small>
+                                        Quality checked devices
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <div className="login-benefit">
+
+                                <span>✓</span>
+
+                                <div>
+
+                                    <strong>
+                                        Genuine Spare Parts
+                                    </strong>
+
+                                    <small>
+                                        Premium quality with warranty
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                            <div className="login-benefit">
+
+                                <span>✓</span>
+
+                                <div>
+
+                                    <strong>
+                                        Professional Repair Service
+                                    </strong>
+
+                                    <small>
+                                        Trusted technicians in Ambattur
+                                    </small>
+
+                                </div>
+
+                            </div>
+
                         </div>
 
-                    )}
+                    </div>
 
-                    <form
-                        onSubmit={handleSubmit}
-                        className="auth-form"
-                    >
+                </section>
 
-                        <label>
-                            Full Name
+                {/* RIGHT SIDE */}
 
-                            <input
-                                type="text"
-                                name="name"
-                                value={form.name}
-                                onChange={
-                                    handleChange
-                                }
-                                placeholder="Enter your full name"
-                                required
-                            />
-                        </label>
+                <section className="login-form-section">
 
-                        <label>
-                            Email
+                    <div className="auth-card">
 
-                            <input
-                                type="email"
-                                name="email"
-                                value={form.email}
-                                onChange={
-                                    handleChange
-                                }
-                                placeholder="Enter your email"
-                                required
-                            />
-                        </label>
+                        <div className="auth-icon">
+                            👤
+                        </div>
 
-                        <label>
-                            Phone Number
+                        <div className="auth-heading">
 
-                            <input
-                                type="tel"
-                                name="phone"
-                                value={form.phone}
-                                onChange={
-                                    handleChange
-                                }
-                                placeholder="Enter your phone number"
-                                required
-                            />
-                        </label>
+                            <p>WELCOME</p>
 
-                        <label>
-                            Password
+                            <h2>Create Account</h2>
 
-                            <input
-                                type="password"
-                                name="password"
-                                value={
-                                    form.password
-                                }
-                                onChange={
-                                    handleChange
-                                }
-                                placeholder="Minimum 8 characters"
-                                minLength="8"
-                                required
-                            />
-                        </label>
+                            <span>
+                                Create your Ambattur Mobiles customer account.
+                            </span>
 
-                        <label>
-                            Confirm Password
+                        </div>
 
-                            <input
-                                type="password"
-                                value={
-                                    confirmPassword
-                                }
-                                onChange={(event) =>
-                                    setConfirmPassword(
-                                        event.target.value
-                                    )
-                                }
-                                placeholder="Enter password again"
-                                required
-                            />
-                        </label>
+                        {error && (
 
-                        <button
-                            type="submit"
-                            className="auth-submit"
-                            disabled={loading}
+                            <div className="auth-error">
+
+                                {error}
+
+                            </div>
+
+                        )}
+
+                        <form
+                            className="auth-form"
+                            onSubmit={handleSubmit}
                         >
 
-                            {loading
-                                ? "Creating Account..."
-                                : "Create Account"}
+                            <label>
 
-                        </button>
+                                <span>Full Name</span>
 
-                    </form>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={form.name}
+                                    onChange={handleChange}
+                                    placeholder="Enter your full name"
+                                    required
+                                />
 
-                    <p className="auth-switch">
+                            </label>
 
-                        Already have an account?
+                            <label>
 
-                        {" "}
+                                <span>Email</span>
 
-                        <Link to="/login">
-                            Login
-                        </Link>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={form.email}
+                                    onChange={handleChange}
+                                    placeholder="Enter your email"
+                                    required
+                                />
 
-                    </p>
+                            </label>
 
-                </div>
+                            <label>
+
+                                <span>Phone Number</span>
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={form.phone}
+                                    onChange={handleChange}
+                                    placeholder="Enter your phone number"
+                                    required
+                                />
+
+                            </label>
+
+                            <label>
+
+                                <span>Password</span>
+
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={form.password}
+                                    onChange={handleChange}
+                                    placeholder="Minimum 8 characters"
+                                    minLength="8"
+                                    required
+                                />
+
+                            </label>
+
+                            <label>
+
+                               <span> Confirm Password</span>
+
+                                <input
+                                    type="password"
+                                    value={confirmPassword}
+                                    onChange={(event) =>
+                                        setConfirmPassword(event.target.value)
+                                    }
+                                    placeholder="Confirm password"
+                                    required
+                                />
+
+                            </label>
+
+                            <button
+                                className="auth-submit"
+                                type="submit"
+                                disabled={loading}
+                            >
+
+                                {loading
+                                    ? "Creating Account..."
+                                    : "Create Account"}
+
+                            </button>
+
+                        </form>
+
+                        <hr
+                           style={{
+                                   margin: "28px 0",
+                                   border: "none",
+                                   borderTop: "1px solid #e8edf4"
+                            }}
+                        />
+
+                        <p className="auth-switch">
+
+                            Already have an account?
+
+                            {" "}
+
+                            <Link to="/login">
+
+                                Login
+
+                            </Link>
+
+                        </p>
+
+                    </div>
+
+                </section>
 
             </main>
+
         </>
+
     );
+
 }
 
 export default Register;

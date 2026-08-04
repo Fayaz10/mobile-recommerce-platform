@@ -32,7 +32,7 @@
 
     width:100%;
 
-    padding:15px 10px;
+    padding:8px 10px;
 
     scrollbar-width:none;
 
@@ -50,7 +50,7 @@
 
 .carousel-container>*{
 
-    flex:0 0 300px;
+    flex:0 0 400px;
 
 }
 

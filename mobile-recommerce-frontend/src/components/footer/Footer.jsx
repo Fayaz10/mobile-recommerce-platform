@@ -1,209 +1,210 @@
-import "../footer/Footer.css";
+import "./Footer.css";
 
 import {
-    Box,
-    Container,
-    Grid,
-    Typography,
-    IconButton,
-    Link
-} from "@mui/material";
-
-import {
-    FaFacebookF,
-    FaInstagram,
-    FaLinkedinIn,
-    FaYoutube,
-    FaMapMarkerAlt,
-    FaPhoneAlt,
-    FaEnvelope,
-    FaClock
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock
 } from "react-icons/fa";
 
 function Footer() {
 
-    const year = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
-    return (
+  return (
 
-        <Box className="footer">
+    <footer className="footer">
 
-            <Container maxWidth="xl">
+      <div className="footer-container">
 
-                <Grid
-                 container
-                 spacing={8}
-                 justifycontent="space-between"
-                 alignitems="flex-start"
-                >
+        {/* ================= Company ================= */}
 
-                    {/* Company */}
+        <div className="footer-column">
 
-                    <Grid size={{ xs: 12, md: 4 }}>
+          <div className="footer-logo">
 
-                        <div className="footer-logo">
+            <h2>
 
-                            <h2>
+              <span className="logo-dark">
+                AMBATTUR
+              </span>
 
-                                <span className="logo-dark">
-                                    AMBATTUR
-                                </span>
+              <br />
 
-                                <span className="logo-orange">
-                                    MOBILES
-                                </span>
+              <span className="logo-orange">
+                MOBILES
+              </span>
 
-                            </h2>
+            </h2>
 
-                            <p className="footer-tagline">
-                                Trusted Refurbished Mobiles & Repair
-                            </p>
+          </div>
 
-                        </div>
+          <p className="footer-description">
 
-                        <Typography className="footer-description">
+            Premium mobile repair and refurbished smartphones at the best prices.
+            We provide genuine spare parts, expert technicians and trusted
+            service across Ambattur.
 
-                            Professional mobile repair, refurbished smartphones,
-                            premium accessories and expert technicians serving
-                            Ambattur with quality service at affordable prices.
+          </p>
 
-                        </Typography>
+          <div className="footer-social">
 
-                        <div className="footer-social">
+            <a href="#">
+              <FaFacebookF />
+            </a>
 
-                            <IconButton>
-                                <FaFacebookF />
-                            </IconButton>
+            <a href="#">
+              <FaInstagram />
+            </a>
 
-                            <IconButton>
-                                <FaInstagram />
-                            </IconButton>
+            <a href="#">
+              <FaLinkedinIn />
+            </a>
 
-                            <IconButton>
-                                <FaLinkedinIn />
-                            </IconButton>
+            <a href="#">
+              <FaYoutube />
+            </a>
 
-                            <IconButton>
-                                <FaYoutube />
-                            </IconButton>
+          </div>
 
-                        </div>
+        </div>
 
-                    </Grid>
+        {/* ================= Quick Links ================= */}
 
-                    {/* Quick Links */}
+        <div className="footer-column">
 
-                    <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+          <h3>
+            QUICK LINKS
+          </h3>
 
-                        <Typography className="footer-heading">
+          <span className="footer-line"></span>
 
-                            Quick Links
+          <nav className="footer-links">
 
-                        </Typography>
+            <a href="/">Home</a>
 
-                        <Link href="/">Home</Link>
-                        <Link href="/repair">Book Repair</Link>
-                        <Link href="/refurbished">Refurbished Mobiles</Link>
-                        <Link href="/accessories">Accessories</Link>
-                        <Link href="/contact">Contact</Link>
+            <a href="/repair">Book Repair</a>
 
-                    </Grid>
+            <a href="/refurbished">Refurbished Mobiles</a>
 
-                    {/* Services */}
+            <a href="/accessories">Accessories</a>
 
-                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+            <a href="/contact">Contact Us</a>
 
-                        <Typography className="footer-heading">
+          </nav>
 
-                            Services
+        </div>
 
-                        </Typography>
+        {/* ================= Services ================= */}
 
-                        <Typography>Screen Replacement</Typography>
-                        <Typography>Battery Replacement</Typography>
-                        <Typography>Charging Port Repair</Typography>
-                        <Typography>Water Damage Repair</Typography>
-                        <Typography>Software Repair</Typography>
+        <div className="footer-column">
 
-                    </Grid>
+          <h3>
+            SERVICES
+          </h3>
 
-                    {/* Contact */}
+          <span className="footer-line"></span>
 
-                    <Grid size={{ xs: 12, md: 3 }}>
+          <div className="footer-services">
 
-                        <Typography className="footer-heading">
+            <p>Screen Replacement</p>
 
-                            Contact
+            <p>Battery Replacement</p>
 
-                        </Typography>
+            <p>Water Damage Repair</p>
 
-                        <div className="contact-item">
+            <p>Camera Repair</p>
 
-                            <FaMapMarkerAlt />
+            <p>Software Repair</p>
 
-                            <span>
+          </div>
 
-                                Ambattur,
-                                Chennai,
-                                Tamil Nadu
+        </div>
 
-                            </span>
+        {/* ================= Contact ================= */}
 
-                        </div>
+        <div className="footer-column">
 
-                        <div className="contact-item">
+          <h3>
+            CONTACT US
+          </h3>
 
-                            <FaPhoneAlt />
+          <span className="footer-line"></span>
 
-                            <span>
+          <div className="contact-list">
 
-                                +91 98765 43210
+            <div className="contact-item">
 
-                            </span>
+              <FaMapMarkerAlt />
 
-                        </div>
+              <p>
+                Ambattur, Chennai, Tamil Nadu
+              </p>
 
-                        <div className="contact-item">
+            </div>
 
-                            <FaEnvelope />
+            <div className="contact-item">
 
-                            <span>
+              <FaPhoneAlt />
 
-                                support@ambatturmobiles.in
+              <p>
+                +91 98765 43210
+              </p>
 
-                            </span>
+            </div>
 
-                        </div>
+            <div className="contact-item">
 
-                        <div className="contact-item">
+              <FaEnvelope />
 
-                            <FaClock />
+              <p>
+                support@ambatturmobiles.in
+              </p>
 
-                            <span>
+            </div>
 
-                                All Days
-                                <br />
-                                9:00 AM – 9:00 PM
+            <div className="contact-item">
 
-                            </span>
+              <FaClock />
 
-                        </div>
+              <p>
+                Mon – Sat | 9:00 AM – 9:00 PM
+              </p>
 
-                    </Grid>
+            </div>
 
-                </Grid>
+          </div>
 
-                <div className="footer-bottom">
+          {/* Google Map */}
 
-                    © {year} Ambattur Mobiles. All Rights Reserved.
+          <iframe
+            className="footer-map"
+            title="Ambattur Mobiles Location"
+            loading="lazy"
+            allowFullScreen
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Ambattur,+Chennai&output=embed"
+          />
 
-                </div>
+        </div>
 
-            </Container>
+      </div>
 
-        </Box>
+      {/* ================= Bottom ================= */}
 
-    );
+      <div className="footer-bottom">
+
+        © {year} Ambattur Mobiles. All Rights Reserved.
+
+      </div>
+
+    </footer>
+
+  );
 
 }
 

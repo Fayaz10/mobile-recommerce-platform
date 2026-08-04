@@ -142,15 +142,13 @@ function Brands() {
 
                 {brands.map((brand) => {
 
-                    const normalizedName =
-                        brand.name
-                            .toLowerCase()
-                            .replace(/\s+/g, "");
+                   const normalizedName = brand.name
+                       .toLowerCase()
+                       .replace(/\s+/g, "")
+                       .replace(/\+/g, "")
+                       .replace(/-/g, "");
 
-                    const logo =
-                        brandLogos[
-                            normalizedName
-                        ];
+                   const logo = brandLogos[normalizedName];
 
 
                     return (
@@ -208,13 +206,6 @@ function Brands() {
                                 </div>
 
                             </div>
-
-
-                            {/* NAME */}
-
-                            <h3>
-                                {brand.name}
-                            </h3>
 
                         </button>
 
