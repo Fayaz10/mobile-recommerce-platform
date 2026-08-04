@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:8080/api";
+const API_BASE_URL =
+  "https://mobile-recommerce-backend-1.onrender.com/api";
 export async function getProducts() {
 
     const response = await fetch(
