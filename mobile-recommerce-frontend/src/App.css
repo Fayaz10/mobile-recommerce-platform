@@ -9243,3 +9243,13 @@ label:has(input[type="checkbox"]) {
     outline:none;
     border-color:#ff6b00;
 }
+
+html,
+body,
+#root{
+
+    width:100%;
+
+    overflow-x:hidden;
+
+}

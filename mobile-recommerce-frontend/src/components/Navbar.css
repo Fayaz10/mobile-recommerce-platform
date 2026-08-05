@@ -419,26 +419,25 @@ font-weight:700;
 }
 
 .logo{
-
     flex:1;
+    min-width:0;
 
     display:flex;
-
-    flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
-    transform:none;
-
+    overflow:hidden;
 }
 
 .logo-title{
 
-    font-size:28px;
+    font-size:20px;
 
     white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
 
 }
 
@@ -458,9 +457,25 @@ font-weight:700;
 
     justify-content:flex-end;
 
-    gap:8px;
+    gap:4px;
 
-    flex:0 0 auto;
+    flex-shrink:0;
+
+}
+
+.header-actions .MuiIconButton-root{
+
+    padding:6px;
+
+}
+
+.menu-btn{
+
+    width:44px !important;
+
+    height:44px !important;
+
+    min-width:44px !important;
 
 }
 
@@ -503,3 +518,4 @@ font-weight:700;
 }
 
 }
+
